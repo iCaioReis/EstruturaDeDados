@@ -1,17 +1,12 @@
 class FilaDinamica {
     constructor() {
-        this.container = []; // vetor que terá os elementos da pilha
-
+        this.container = []; // vetor que terá os elementos da fila
       }
 
     enfileirar(elemento){
-       /* if (this.estaCheia()) {
-            return ("A Pilha está cheia!");
-          }else {*/
             this.container.push(elemento);
-            return (`Elemento "${elemento}" adcionado com sucesso!`)
-         // }
     }
+    
 	desenfileirar() {
         if (this.estaVazia()) {
             return("A Pilha está vazia!");
