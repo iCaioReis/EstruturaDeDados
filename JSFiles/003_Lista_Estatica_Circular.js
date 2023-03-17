@@ -15,7 +15,8 @@ class lista {
 
 
 		this.dados = [];
-		this.tamanho = tamanho; // iniciar um array que conterá os valores da pilha
+		this.tamanhoMaximo = tamanho; // iniciar um array que conterá os valores da pilha
+		this.tamanhoAtual = 0
 	}
 
 	//anexa(insere ao final da lista) a lista o novo dado fornecido
@@ -64,7 +65,9 @@ class lista {
 					this.ponteiroFim = -1;
 				}
 				this.ponteiroFim++;
+				return (`Elemento ${elemento} inserido na posição ${posicao} com sucesso!`) 
 				//fim do patch
+				
 			} else {
 				return("Indice Inválido");
 			}
@@ -155,7 +158,7 @@ class lista {
 
 	//métodos auxiliares
 	estaCheia() {
-		return (this.tamanho === this.dados.length);
+		return (this.tamanhoMaximo === this.quantidade);
 	}
 	estaVazia() {
 		return (this.quantidade == 0);
@@ -176,11 +179,14 @@ class lista {
 		console.log(listaEstatica.anexar("e"))
 		console.log(listaEstatica.imprimir())
 
-		console.log(listaEstatica.apagar(1))
+		console.log(listaEstatica.apagar(0))
+		console.log(`Quantidade: ${listaEstatica.quantidade}`)
 		console.log(listaEstatica.imprimir())
 
-		/*console.log(listaEstatica.inserir(2,"C"))
+		console.log(listaEstatica.inserir(2,"EE"))
 		console.log(listaEstatica.imprimir());
+		console.log(listaEstatica.atualizar(1, "certo"))
+		/*
 		console.log(listaEstatica.anexar("D"))
 		console.log(listaEstatica.imprimir());
 		console.log(listaEstatica.apagar(0))
