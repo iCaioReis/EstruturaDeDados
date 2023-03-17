@@ -5,6 +5,7 @@ class FilaDinamica {
 
     enfileirar(elemento){
             this.container.push(elemento);
+	    return elemento;
     }
     
 	desenfileirar() {
