@@ -16,20 +16,20 @@ class lista {
 
 		this.dados = [];
 		this.tamanho = tamanho; // iniciar um array que conterá os valores da pilha
-		this.container = []; // vetor que terá os elementos da pilha
 	}
 
 	//anexa(insere ao final da lista) a lista o novo dado fornecido
 	anexar(elemento) {
 		if (!this.estaCheia()) {
 			//patch para que a fila funcione de forma circular
-			if (this.ponteiroFim == this.dados.length - 1) {
+			if (this.ponteiroFim == this.dados.length) {
 				this.ponteiroFim = -1;
 			}
 			this.quantidade++;
 			//fim do patch
 			this.ponteiroFim++;
 			this.dados[this.ponteiroFim] = elemento;
+			return (`Elemento ${elemento} anexado com sucesso!`)
 		} else {
 			return("Lista Cheia!");
 		}
@@ -39,12 +39,12 @@ class lista {
 	inserir(posicao, elemento) {
 		if (!this.estaCheia()) {
 			//verificar se a posicao informada é valida
-			if ((posicao >= 0) && (posicao <= quantidade)) {
+			if ((posicao >= 0) && (posicao <= this.quantidade)) {
 				//mapeamento DE endereçamento lógico (informado pelo usuário)
 				//PARA endereçamento físico (onde o elemento está no array
 				//Instrução comum a maioria dos métodos
 				let pontoManipulacao = ((this.ponteiroInicio + 1) + posicao) % this.dados.length;
-				for (i = (this.ponteiroFim + 1) % this.dados.length; i != pontoManipulacao; i--) {
+				for (let i = ((this.ponteiroFim + 1) % this.dados.length); i != pontoManipulacao; i--) {
 					let atual = i;
 					let anterior = i - 1;
 					//patch (correção) para que a lista funcione circular
@@ -98,7 +98,7 @@ class lista {
 	atualizar(posicao, novoElemento) {
 		if (!this.estaVazia()) {
 			//verificando se o índice/posição é válido
-			if ((posicao >= 0) && (posicao < quantidade)) {
+			if ((posicao >= 0) && (posicao < this.quantidade)) {
 				//mapeamento DE endereçamento lógico (informado pelo usuário)
 				//PARA endereçamento físico (onde o elemento está no array
 				//Instrução comum a maioria dos métodos
@@ -123,7 +123,7 @@ class lista {
 				//Instrução comum a maioria dos métodos
 				let pontoManipulacao = ((this.ponteiroInicio + 1) + posicao) % this.dados.length;
 				elementoTemp = this.dados[pontoManipulacao];
-				for (i = pontoManipulacao; i != this.ponteiroFim ; i++) {
+				for (let i = pontoManipulacao; i != this.ponteiroFim ; i++) {
 					let atual = i;
 					let proximo = i + 1;
 					//patch (correção) para que a lista funcione circular
@@ -142,6 +142,7 @@ class lista {
 				if (this.ponteiroFim == -1) {
 					this.ponteiroFim = this.dados.length - 1;
 				}
+				this.dados[this.ponteiroFim + 1] = ""
 				//fim do patch
 			} else {
 				return("Indice Inválido!");
@@ -154,29 +155,38 @@ class lista {
 
 	//métodos auxiliares
 	estaCheia() {
-		return (this.tamanho === this.container.length);
+		return (this.tamanho === this.dados.length);
 	}
 	estaVazia() {
 		return (this.quantidade == 0);
 	}
 	imprimir() {
-		return (this.container);
+		return (this.dados);
 	}
 }
 
 		let listaEstatica = new lista(5);
 		console.log (listaEstatica.anexar("A"))
-		console.log(listaEstatica.imprimir())
 		console.log(listaEstatica.anexar("B"))
-		console.log(listaEstatica.imprimir());
-		console.log(listaEstatica.inserir(2,"C"))
+		console.log(listaEstatica.anexar("c"))
+		console.log(listaEstatica.anexar("d"))
+		console.log(listaEstatica.imprimir())
+
+		console.log(listaEstatica.anexar("j"))
+		console.log(listaEstatica.anexar("e"))
+		console.log(listaEstatica.imprimir())
+
+		console.log(listaEstatica.apagar(1))
+		console.log(listaEstatica.imprimir())
+
+		/*console.log(listaEstatica.inserir(2,"C"))
 		console.log(listaEstatica.imprimir());
 		console.log(listaEstatica.anexar("D"))
 		console.log(listaEstatica.imprimir());
 		console.log(listaEstatica.apagar(0))
 		console.log(listaEstatica.imprimir());
-		console.log(listaEstatica.inserir(0,"E"))
+		console.log(listaEstatica.inserir(0,"E"));
 		console.log(listaEstatica.imprimir());
 		console.log(listaEstatica.selecionarUm(1));
-		console.log(listaEstatica.atualizar(1,"E"))
-		console.log(listaEstatica.imprimir());
+		console.log(listaEstatica.atualizar(1,"E"));
+		console.log(listaEstatica.imprimir());*/
