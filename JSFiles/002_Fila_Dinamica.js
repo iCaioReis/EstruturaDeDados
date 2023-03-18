@@ -1,39 +1,40 @@
 class FilaDinamica {
-    constructor() {
-        this.container = []; // vetor que terá os elementos da fila
-      }
+  constructor() {
+    this.container = []
+  }
 
-    enfileirar(elemento){
-            this.container.push(elemento);
-	    return elemento;
-    }
-    
-	desenfileirar() {
-        if (this.estaVazia()) {
-            return("A Pilha está vazia!");
-          }else{
-            let elemntoRemovido = this.espiar()
-            this.container.shift();
-            return (`Elemento ${elemntoRemovido} removido com sucesso!`);
-          }
-    }
-    
-	espiar(){
-        if (this.estaVazia()) {
-            return("A Pilha está vazia!");
-          }else {
-            return this.container[this.container[1]];
-          }
-    }
-	
+  //Enfilerar elemento passado como parâmetro na fila
+  enfileirar(elemento) {
+    this.container.push(elemento);
+    return `Elemento "${elemento} enfileirado com sucesso!"`;
+  }
 
-    //Métodos Auxiliares
-    estaVazia() {
-        return this.container.length === 0;
+  desenfileirar() {
+    if (this.estaVazia()) {
+      return ("A Pilha está vazia!");
+    } else {
+      let elementoRemovido = this.espiar()
+      this.container.shift();
+      return (`Elemento ${elementoRemovido} desenfileirado com sucesso!`);
     }
-	imprimir() {
-        return (this.container);
+  }
+
+  //Retorna o próximo elemento a ser desenfileirado
+  espiar() {
+    if (this.estaVazia()) {
+      return ("A Pilha está vazia!");
+    } else {
+      return this.container[0];
     }
+  }
+
+  //Métodos Auxiliares
+  estaVazia() {
+    return this.container.length === 0;
+  }
+  imprimir() {
+    return (this.container);
+  }
 }
 
 let fila = new FilaDinamica();

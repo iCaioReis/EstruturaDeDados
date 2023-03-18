@@ -1,5 +1,4 @@
 class lista {
-
 	constructor(tamanho) {
 
 		// definindo tamanho máximo caso o usuário não envie um valor que não seja um número
@@ -9,7 +8,7 @@ class lista {
 			tamanho = 10;
 		}
 
-		this.quantidade = 0; //Verificar o uso
+		this.quantidade = 0; //Quantidade de itens no array
 		this.ponteiroInicio = -1;
 		this.ponteiroFim = -1;
 		this.dados = [];
@@ -57,7 +56,7 @@ class lista {
 		if (!this.estaVazia()) {
 			//verificando se o índice é válido 
 			if ((posicao >= 0) && (posicao < this.quantidade)) {
-				return (this.dados[posicao])
+				return (`Dado selecionado: ${this.dados[posicao]}`)
 			} else {
 				return("Indice Invalido!");
 			}
@@ -72,6 +71,7 @@ class lista {
 			//verificando se a posição é válida
 			if ((posicao >= 0) && (posicao < this.quantidade)) {
 				this.dados[posicao] = novoElemento;
+				return (`Novo elemento "${novoElemento}" atualizado com sucesso no índice ${posicao}!`)
 			} else {
 				return("Indice Inválido!");
 			}
@@ -94,7 +94,7 @@ class lista {
 				this.ponteiroFim--;
 				this.dados.pop()
 
-				return (`Elemento na posição ${posicao} apagado com sucesso!`)
+				return (`Dado na posição ${posicao} apagado com sucesso!`)
 			} else {
 				return("Indice Inválido!");
 			}
