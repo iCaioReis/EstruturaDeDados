@@ -20,6 +20,7 @@ class PilhaEstatica {
       return (`Elemento "${elemento}" adcionado com sucesso!`)
     }
   }
+
   //Desempilhar elemento no topo da pilha
   desempilhar() {
     if (this.estaVazia()) {
@@ -31,6 +32,7 @@ class PilhaEstatica {
     }
   }
 
+  //Retorna o elemento no topo da pilha
   topo() {
     if (this.estaVazia()) {
       return ("A Pilha está vazia!");

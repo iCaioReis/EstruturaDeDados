@@ -19,7 +19,7 @@ class FilaDinamica {
     }
   }
 
-  //Retorna o próximo elemento a ser desenfileirado
+  //Retorna o próximo elemento a ser desenfileirado, ou seja, o na primeira posição da fila
   espiar() {
     if (this.estaVazia()) {
       return ("A Pilha está vazia!");
