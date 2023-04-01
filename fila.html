@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fila</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <section class="container">
+    <h1>Fila</h1>
+    
+    <div class="form" id="formulario">
+      <label>Na fila, o primeiro a entrar será o primeiro a sair. (First in, first out)</label>
+      
+      <button class="enfileirar" id="enfileirar" onclick="enfileirar()">enfileirar</button>
+      <button  class="desenfileirar" id="desenfileirar" onclick="desenfileirar()">Desenfileirar</button>
+    </div>
+  </section>
+
+  <section class="container">
+    <table border="1">
+      <thead>Ex. Fila</thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </section>
+
+  <script src="./assets/js/fila.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lista</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <section class="container">
+    <h1>Lista</h1>
+    
+    <div class="form" id="formulario">
+      <label>Na lista, o elemento pode ser inserido ou removido em qualquer posição, a qualquer momento.</label>
+      
+      <button class="addLista" id="addLista" onclick="addLista()">Adicionar a lista</button>
+      <button  class="removerLista" id="removerLista" onclick="removerLista()">Remover da Lista</button>
+    </div>
+  </section>
+
+  <section class="container">
+    <table border="1">
+      <thead>Ex. Lista</thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </section>
+
+  <script src="./assets/js/lista.js"></script>
+</body>
+
+</html>
